@@ -31,4 +31,14 @@ public class User {
   public void setMail(String mail) {
     this.mail = mail;
   }
+
+  @Override
+  public String toString() {
+    return "User{" +
+      "name='" + name + '\'' +
+      ", firstName='" + firstName + '\'' +
+      ", lastName='" + lastName + '\'' +
+      ", mail='" + mail + '\'' +
+      '}';
+  }
 }

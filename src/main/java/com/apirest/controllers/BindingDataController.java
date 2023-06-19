@@ -16,7 +16,7 @@ public class BindingDataController {
 
   @RequestMapping(value = "/byGroup")
   public @ResponseBody String byBean(User user) {
-    return "binding by bean";
+    return "binding by bean " + user;
   }
 
 }
