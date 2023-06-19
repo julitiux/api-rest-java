@@ -23,6 +23,9 @@ public class RequestMapController {
     return "mapping by path + method + parameter";
   }
 
-
+  @RequestMapping(value = "/simpleMapping/byParamter", method RequestMethod.GET, params = "!foo")
+  public @ResponseBody String byParameterNegation(){
+    return "mapping by path, method + parameter negation";
+  }
 
 }
