@@ -18,4 +18,11 @@ public class RequestMapController {
     return "mapping by path + method";
   }
 
+  @RequestMapping(value = "/simpleMapping/byParameter", method = RequestMethod.GET, params = "foo")
+  public @ResponseBody String byParameter(){
+    return "mapping by path + method + parameter";
+  }
+
+
+
 }
