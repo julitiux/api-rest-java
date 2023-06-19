@@ -19,13 +19,18 @@ public class RequestMapController {
   }
 
   @RequestMapping(value = "/simpleMapping/byParameter", method = RequestMethod.GET, params = "foo")
-  public @ResponseBody String byParameter(){
+  public @ResponseBody String byParameter() {
     return "mapping by path + method + parameter";
   }
 
   @RequestMapping(value = "/simpleMapping/byParamter", method RequestMethod.GET, params = "!foo")
-  public @ResponseBody String byParameterNegation(){
-    return "mapping by path, method + parameter negation";
+  public @ResponseBody String byParameterNegation() {
+    return "mapping by path + method + parameter negation";
+  }
+
+  @RequestMapping(value = "/simpleMapping/byHeader", method = RequestMethod.GET, headers = "Accept=text/plain")
+  public @ResponseBody String byHeader() {
+    return "mapping by path + method + a header";
   }
 
 }
