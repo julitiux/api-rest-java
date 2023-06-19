@@ -33,4 +33,9 @@ public class RequestMapController {
     return "mapping by path + method + a header";
   }
 
+  @RequestMapping(value = "/simpleMapping/notHeader", method = RequestMethod.GET, headers = "!FooHeaders")
+  public @ResponseBody String byHeaderNegation() {
+    return "mapping by path + method + header negation";
+  }
+
 }
