@@ -17,15 +17,21 @@ public class BindingDataController {
     return "binding by bean " + user;
   }
 
-  @RequestMapping(value = "path/{var}")
+  @RequestMapping(value = "/byPathVariable/{var}")
   public @ResponseBody String byPathVariable(@PathVariable String var) {
     return "binding by path variable " + var;
   }
 
-  @RequestMapping(value = "")
+  @RequestMapping(value = "/byHeader")
   public @ResponseBody String byHeader(@RequestHeader String Accept) {
     return "binding by Header " + Accept;
   }
+
+  @RequestMapping(value = "/byCookie")
+  public @ResponseBody String byCookie(@CookieValue String openId_provider) {
+    return "binding by cookie " + openId_provider;
+  }
+
 
 
 }
