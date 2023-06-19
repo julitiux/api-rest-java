@@ -1,6 +1,7 @@
 package com.apirest.controllers;
 
 import com.apirest.domains.User;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,12 @@ public class BindingDataController {
   @RequestMapping(value = "/byBody")
   public @ResponseBody String byBody(@RequestBody String body) {
     return "binding by body " + body;
+  }
+
+  @RequestMapping(value = "/byEntity", method = RequestMethod.POST)
+  public @ResponseBody String byEntity(HttpEntity<String> entity) {
+    return "binding by entity " + entity.getBody() + " and " + entity.getHeaders();
+
   }
 
 }
