@@ -32,6 +32,9 @@ public class BindingDataController {
     return "binding by cookie " + openId_provider;
   }
 
-
+  @RequestMapping(value = "/byBody")
+  public @ResponseBody String byBody(@RequestBody String body) {
+    return "binding by body " + body;
+  }
 
 }
