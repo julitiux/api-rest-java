@@ -38,4 +38,9 @@ public class RequestMapController {
     return "mapping by path + method + header negation";
   }
 
+  @RequestMapping(value = "/simpleMapping/*", method = RequestMethod.GET)
+  public @ResponseBody String byRegexp() {
+    return "mapping by regexp";
+  }
+
 }
