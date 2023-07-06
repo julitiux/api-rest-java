@@ -1,9 +1,6 @@
 package com.apirest.controllers;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,8 +22,16 @@ public class HttpEntityController {
 
   @RequestMapping(value = "/response/entity/status", method = RequestMethod.GET)
   public ResponseEntity<String> responseEntityStatusCode() {
-    String string = "The ResponseBody String with custom status code";
+    String string = "The ResponseEntity String with custom status code";
     return new ResponseEntity<>(string, HttpStatus.FORBIDDEN);
+  }
+
+  @RequestMapping(value = "/response/entity/headers", method = RequestMethod.GET)
+  public ResponseEntity<String> responseEntityCustomHeaders() {
+    HttpHeaders httpHeaders = new HttpHeaders();
+    httpHeaders.setContentType(MediaType.TEXT_PLAIN);
+    String string = "The ResponseEntity String with custom HttpHeaders Content-Type=text/plain";
+    return new ResponseEntity<String>(string, httpHeaders, HttpStatus.OK);
   }
 
 }
